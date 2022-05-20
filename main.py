@@ -25,7 +25,7 @@ def timeit(f):
 @click.option('-s', '--image-size', default=224, help='Image size')
 def main(num_iterations, batch_size, image_size):
     x = torch.randn(batch_size, 3, image_size, image_size)
-    net = efficientnet_b0(pretrained=True)
+    net = efficientnet_b0()
 
     @timeit
     def cpu_forward():
